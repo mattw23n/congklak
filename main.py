@@ -177,8 +177,22 @@ if __name__ == "__main__":
         print(f"Turn: Player {current_player.player_id.value}")
         
         if not board.get_legal_moves(current_player.player_id):
-            print(f"Player {current_player.player_id.value} has no legal moves. Game over.")
-            break
+            other_player = player2 if current_player == player1 else player1
+            if not board.get_legal_moves(other_player.player_id):
+                print("No legal moves left for both players. Game over!")
+                if board.board[board.board_size] == board.board[len(board.board) - 1]:
+                    print("It's a draw!")
+                else:
+                    winner = player1 if board.board[board.board_size] > board.board[len(board.board) - 1] else player2
+                    print (f"Game Over! Player {winner.player_id.value} wins!")
+                print (f"Final scores - Player 1: {board.board[board.board_size]}, Player 2: {board.board[len(board.board) - 1]}")
+                break
+            
+            print(f"Player {current_player.player_id.value} has no legal moves. Switching to Player {player2.player_id.value if current_player == player1 else player1.player_id.value}.")
+            current_player = player2 if current_player == player1 else player1
+            continue
+        
+       
 
         move = current_player.choose_move(board)
         
