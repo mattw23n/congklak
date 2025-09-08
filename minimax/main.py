@@ -1,7 +1,5 @@
 from enum import Enum
 
-from minimax import minimax
-
 # --- Enums (Unchanged) ---
 class PlayerID(Enum):
     PLAYER_ONE = 1
@@ -211,8 +209,7 @@ class Player:
             # This is where you will plug in your AI algorithms!
             # For now, a simple AI: pick the first legal move.
             print(f"AI ({self.player_id.name}) is thinking...")
-            # return legal_moves[0]
-            return minimax(board, self.player_id)  # Placeholder for actual minimax call
+            return legal_moves[0]
         else:
             # Human player input
             while True:
