@@ -1,10 +1,11 @@
 from game_components import Board, PlayerID, GameStatus
 from minimax.minimax_module import MinimaxAlgo
+from minimax.minimax_module_v2 import MinimaxAlgoV2
 from algo import Algo
 
 available_algos = {
     "minimax": MinimaxAlgo(depth=4),
-    "random": None
+    "minimax-v2": MinimaxAlgoV2(depth=4),
 }
 
 # --- Player Class (Decision Maker) ---
