@@ -1,6 +1,6 @@
 # ai.py
 import math
-from main import Board, PlayerID, GameStatus # Assuming your Board class is in board.py
+from game_components import Board, PlayerID, GameStatus # Assuming your Board class is in board.py
 
 # This is a tunable parameter. Start with 3 or 4.
 # Higher values mean a stronger but much slower AI.
